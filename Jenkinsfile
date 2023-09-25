@@ -10,7 +10,7 @@ pipeline{
                         steps{
                                 input('Do you want to proceed')
                             }
-                        }
+                }
                 stage('Three'){
                         when{
                              not{
@@ -34,10 +34,13 @@ pipeline{
                                         docker{
                                                 reuseNode false
                                                 image 'ubuntu'
-                                         }
-                                        }
+                                            }
+                                     }
                                         steps{
                                                echo "Running the integration test"
                                              }
                                          }
                                 }
+				}
+			}
+}
